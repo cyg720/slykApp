@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h6>新增基金分析</h6>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="bj_fff" style="width: 100%;">
+    <ion-card-content>
+      <ion-list>
+        <!--年度-->
+        <ion-item>
+          <label item-left>年度</label>
+          <ion-datetime
+            cancelText="取消" doneText="确定"
+            displayFormat="YYYY"
+            [(ngModel)]="myYear" style="padding-left: 0px;" ></ion-datetime>
+          <span item-right class="color_1">
+          <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+      </span>
+        </ion-item>
+        <!--參保类型 暂时不需要 hide-->
+        <ion-item class="hide">
+          <label item-left>参保类型</label>
+          <ion-multi-picker cancelText="取消" doneText="确定"
+                            item-content [multiPickerColumns]="insured_type"></ion-multi-picker>
+          <span item-right class="color_1">
+          <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+      </span>
+        </ion-item>
+        <!--区县-->
+        <ion-item (click)="toCounty()">
+          <label item-left>区县</label>
+          <span> {{countyName}}</span>
+          <span item-right class="color_1">
+          <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+      </span>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <button style="margin-top: 50px;" ion-button block
+          (click)="addFundAnalysls()" [disabled]="addDisabled" >确定新增</button>
+</ion-content>

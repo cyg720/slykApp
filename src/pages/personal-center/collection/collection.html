@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h5>我的收藏</h5></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngFor="let i of list">
+      <!-- 总控控制 -->
+      <ion-item-sliding #slidingItem>
+        <ion-item *ngIf="i.favoriteType == type.C" tappable class="itemBorBom"  (click)="toPage(i)">
+          <ion-avatar item-start>
+            <ion-fab style="position: inherit;display: inline-block;">
+              <button ion-fab>
+                <i [ngClass]="['iconfont',icon1]" style="font-size: 30px;"></i>
+              </button>
+            </ion-fab>
+          </ion-avatar>
+          <h2>{{i.name}}</h2>
+          <p>预算金额：{{i.ysje}}</p>
+          <p>累计结算金额：<span>{{i.ljjsje}}</span></p>
+          <span item-right class="color_1">
+          <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+        </span>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="slidBack" (click)="onFavorite(i.id)">
+            <ion-icon name="ios-trash-outline" class="iconSize_"></ion-icon>
+            <span class="color_">删除</span>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <!-- 医院分析 -->
+      <ion-item-sliding>
+        <ion-item *ngIf="i.favoriteType == type.B" tappable class="itemBorBom"  (click)="toPage(i)">
+          <ion-avatar item-start>
+            <ion-fab style="position: inherit;display: inline-block;">
+              <button ion-fab>
+                <i [ngClass]="['iconfont',icon2]" style="font-size: 38px;"></i>
+              </button>
+            </ion-fab>
+          </ion-avatar>
+          <h2>{{i.name}}</h2>
+          <p *ngIf="i.state">生成时间：<span>{{i.date}}</span></p>
+          <p *ngIf="!i.state">{{i.stateStr}}</p>
+          <span item-right class="color_1">
+            <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+          </span>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="slidBack" (click)="onFavorite(i.id)">
+            <ion-icon name="ios-trash-outline" class="iconSize_"></ion-icon>
+            <span class="color_">删除</span>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <!-- 基金分析 -->
+      <ion-item-sliding>
+        <ion-item *ngIf="i.favoriteType == type.A" tappable class="itemBorBom"  (click)="toPage(i)">
+          <ion-avatar item-start>
+            <ion-fab style="position: inherit;display: inline-block;">
+              <button ion-fab>
+                <i [ngClass]="['iconfont',icon3]" style="font-size: 38px;"></i>
+              </button>
+            </ion-fab>
+          </ion-avatar>
+          <h2>{{i.name}}</h2>
+          <p *ngIf="i.state">生成时间：<span>{{i.date}}</span></p>
+          <p *ngIf="!i.state">{{i.stateStr}}</p>
+          <p>区县：<span>{{i.county}}</span></p>
+          <span item-right class="color_1">
+            <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+          </span>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="slidBack" (click)="onFavorite(i.id)">
+            <ion-icon name="ios-trash-outline" class="iconSize_"></ion-icon>
+            <span class="color_">删除</span>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <!-- 基金仿真 -->
+      <ion-item-sliding>
+        <ion-item *ngIf="i.favoriteType == type.D" tappable class="itemBorBom"  (click)="toPage(i)">
+          <ion-avatar item-start>
+            <ion-fab style="position: inherit;display: inline-block;">
+              <button ion-fab>
+                <i [ngClass]="['iconfont',icon4]" style="font-size: 36px;"></i>
+              </button>
+            </ion-fab>
+          </ion-avatar>
+          <h2>{{i.name}}</h2>
+          <p *ngIf="i.state">生成时间：<span>{{i.date}}</span></p>
+          <p *ngIf="!i.state">{{i.stateStr}}</p>
+          <p>区县：<span>{{i.county}}</span></p>
+          <span item-right class="color_1">
+            <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+          </span>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="slidBack" (click)="onFavorite(i.id)">
+            <ion-icon name="ios-trash-outline" class="iconSize_"></ion-icon>
+            <span class="color_">删除</span>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </ion-list>
+</ion-content>

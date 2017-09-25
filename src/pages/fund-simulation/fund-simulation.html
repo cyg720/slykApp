@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h6>基金仿真</h6></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [ngStyle]="{'display':display}">
+    <ion-item tappable class="itemBorBom bj_fff margin_top_10" *ngFor="let i of fundSimulationList" (click)="toFundSimulationDetails(i)">
+      <ion-avatar item-start>
+        <ion-fab style="position: inherit;display: inline-block;">
+          <button ion-fab>
+            <i [ngClass]="['iconfont',icon]" style="font-size: 36px;"></i>
+          </button>
+        </ion-fab>
+      </ion-avatar>
+      <h5>{{i.name}}</h5>
+      <p>新增时间：{{i.newDate}}</p>
+      <p>时间段：<span>{{i.startDate}}-{{i.endDate}}</span></p>
+      <span item-right class="color_1">
+          <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+        </span>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

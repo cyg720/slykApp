@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      <h6>仿真参数查看</h6>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="petList[index].name">
+    <ion-segment-button value="gzxs" (ionSelect)="selectedSeg($event)" >
+      规则系数
+    </ion-segment-button>
+    <ion-segment-button value="yp" (ionSelect)="selectedSeg($event)">
+      药品
+    </ion-segment-button>
+    <ion-segment-button value="xm" (ionSelect)="selectedSeg($event)">
+      项目
+    </ion-segment-button>
+    <ion-segment-button value="cl" (ionSelect)="selectedSeg($event)">
+      材料
+    </ion-segment-button>
+    <ion-segment-button value="tsjb" (ionSelect)="selectedSeg($event)">
+      特殊疾病
+    </ion-segment-button>
+    <ion-segment-button value="cbjg" (ionSelect)="selectedSeg($event)">
+      参保机构
+    </ion-segment-button>
+  </ion-segment>
+  <div [(ngSwitch)]="petList[index].name">
+    <div (swipe)="swipeEvent($event)" style="width: 100%;">
+      <div *ngSwitchCase="'gzxs'">
+        <gzxs-sim></gzxs-sim>
+      </div>
+      <div *ngSwitchCase="'yp'">
+        <yp-sim></yp-sim>
+      </div>
+      <div *ngSwitchCase="'xm'">
+        <xm-sim></xm-sim>
+      </div>
+      <div *ngSwitchCase="'cl'">
+        <cl-sim></cl-sim>
+      </div>
+      <div *ngSwitchCase="'tsjb'">
+        <tsjb-sim></tsjb-sim>
+      </div>
+      <div *ngSwitchCase="'cbjg'">
+        <cbjg-sim></cbjg-sim>
+      </div>
+    </div>
+  </div>
+</ion-content>

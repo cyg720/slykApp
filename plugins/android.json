@@ -1,0 +1,64 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "call-number": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-appminimize": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-file-opener2": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-http": {
+            "PACKAGE_NAME": "com.android.slyk"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.android.slyk"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.android.slyk"
+        }
+    }
+}

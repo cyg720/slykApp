@@ -1,0 +1,196 @@
+<ion-header>
+  <ion-navbar text-center>
+    <ion-title>
+      <h6>{{title}}</h6>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="favorite()">
+        <ion-icon [name]="shoucang" class="headerIcon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid [ngStyle]="{'display':display}" >
+    <ion-row text-center>
+      <ion-col col-6>
+        <ion-card class="bj_fff" style="width: 99%;" tappable (click)="toView('MedicalTotalCostPage')" >
+          <ion-card-header style="padding: 8px 0px">
+            <h5>
+              医疗总费用
+              <span class="warningBiaozhu">{{fundAnalysisDetails.ylzfy_fd}}</span>
+            </h5>
+          </ion-card-header>
+          <ion-card-content>
+            <h1>
+              <span>{{fundAnalysisDetails.ylzfy}}</span>
+              <span class="spanFontSize">万</span>
+            </h1>
+            <div text-center>
+              <div class="color_4 fontSize14">
+                去年同期:
+                <span class="color_3">
+                  {{fundAnalysisDetails.ylzfy_qntq}}
+                  <span class="spanFontSize">万</span>
+                </span>
+              </div>
+              <div class="color_4 fontSize14">
+                去年全年:
+                <span class="color_3">
+                  {{fundAnalysisDetails.ylzfy_qnqn}}
+                  <span class="spanFontSize">万</span>
+                </span>
+              </div>
+            </div>
+            <div class="border-top color_1 margin_top_5">
+                查看详情
+                <ion-icon style="font-size: 1em;" name="ios-arrow-dropright-outline" ></ion-icon>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6>
+        <ion-card class="bj_fff" style="width: 99%;margin-left: 1%" tappable (click)="toView('WholePayCostPage')">
+          <ion-card-header style="padding: 8px 0px">
+            <h5>
+              统筹支付费用
+              <span class="warningBiaozhu">{{fundAnalysisDetails.tczffy_fd}}</span>
+            </h5>
+          </ion-card-header>
+          <ion-card-content>
+            <h1>
+              {{fundAnalysisDetails.tczffy}}
+              <span class="spanFontSize">万</span>
+            </h1>
+            <div text-center>
+              <div class="color_4 fontSize14">
+                去年同期:
+                <span class="color_3">
+                  {{fundAnalysisDetails.tczffy_qntq}}
+                  <span class="spanFontSize">万</span>
+                </span>
+              </div>
+              <div class="color_4 fontSize14">
+                去年全年:
+                <span class="color_3">
+                  {{fundAnalysisDetails.tczffy_qnqn}}
+                  <span class="spanFontSize">万</span>
+                </span>
+              </div>
+            </div>
+            <div class="border-top color_1 margin_top_5">
+              查看详情
+              <ion-icon style="font-size: 1em;" name="ios-arrow-dropright-outline"></ion-icon>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card style="width: 100%;" class="bj_fff">
+        <ion-card-content>
+          <ion-row style="height: 25px;" class="margin_top_5">
+            <ion-col col-5>
+              <h6 class="padding_left_15">费用类别</h6>
+            </ion-col>
+            <ion-col col-2 text-right>
+              <div class="divBorderRadius" [(ngStyle)]="colors[0]"></div>
+              <span style="font-size: 0.5em;">药品</span>
+            </ion-col>
+            <ion-col col-2 text-right>
+              <div class="divBorderRadius" [(ngStyle)]="colors[1]"></div>
+              <span style="font-size: 0.5em;">项目</span>
+            </ion-col>
+            <ion-col col-2 text-right>
+              <div class="divBorderRadius" [(ngStyle)]="colors[2]"></div>
+              <span style="font-size: 0.5em;">材料</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <div #costAnalysis style="height: 200px; width: 100%;"></div>
+          </ion-row>
+          <ion-row class="margin_bottom_5" *ngFor="let c of costTypeVoList;let i=index;">
+            <ion-col col-4 text-center>
+              <div class="divBorderRadius_t" [(ngStyle)]="colors[i]">{{c.name}}</div>
+            </ion-col>
+            <ion-col col-4>
+              <div>总费用<span class="color_3">{{c.value}}</span><span class="spanFontSize">万</span></div>
+            </ion-col>
+            <ion-col col-4>
+              同比增长<span class="color_3">{{c.tbzz}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card style="width: 100%;" class="bj_fff">
+        <ion-card-content >
+          <ion-row style="height: 25px;" class="margin_top_5">
+            <ion-col col-4>
+              <h6 class="padding_left_15">医保机构等级</h6>
+            </ion-col>
+            <ion-col col-2>
+              <div class="divBorderRadius" [(ngStyle)]="colors[0]"></div>
+              <span style="font-size: 0.5em;">一级</span>
+            </ion-col>
+            <ion-col col-2>
+              <div class="divBorderRadius" [(ngStyle)]="colors[1]"></div>
+              <span style="font-size: 0.5em;">二级</span>
+            </ion-col>
+            <ion-col col-2>
+              <div class="divBorderRadius" [(ngStyle)]="colors[2]"></div>
+              <span style="font-size: 0.5em;">三级</span>
+            </ion-col>
+            <ion-col col-2>
+              <div class="divBorderRadius" [(ngStyle)]="colors[3]"></div>
+              <span style="font-size: 0.5em;">无等级</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <div #hospitalLevelAnalysis style="height: 200px; width: 100%;"></div>
+          </ion-row>
+          <ion-row class="margin_bottom_5" *ngFor="let h of hospLevelVoList;let i = index;">
+            <ion-col col-4 text-center>
+              <div class="divBorderRadius_t" [(ngStyle)]="colors[i]">{{h.name}}</div>
+            </ion-col>
+            <ion-col col-4>
+              <div>
+                总费用
+                <span class="color_3">{{h.value}}</span>
+                <span class="spanFontSize">万</span>
+              </div>
+            </ion-col>
+            <ion-col col-4>
+              同比增长
+              <span class="color_3">{{h.tbzz}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row >
+      <ion-card style="width: 100%;" class="bj_fff">
+        <ion-card-content>
+          <ion-row style="height: 25px;" class="margin_top_5">
+            <ion-col col-4>
+              <h6 class="padding_left_15">年龄段</h6>
+            </ion-col>
+            <ion-col col-4 text-right>
+              <div class="divBorderRadius" [(ngStyle)]="colors[0]"></div>
+              <span style="font-size: 0.5em;">本年值</span>
+            </ion-col>
+            <ion-col col-4 text-center>
+              <div class="divBorderRadius" [(ngStyle)]="colors[1]"></div>
+              <span style="font-size: 0.5em;">上年值</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <div #ageAnalysis style="height: 300px;width: 100%;" ></div>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

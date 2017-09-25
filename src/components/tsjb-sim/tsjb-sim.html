@@ -1,0 +1,187 @@
+<div>
+  <ion-grid>
+    <ion-card style="width: 100%;"class="bj_fff">
+      <ion-card-content>
+        <ion-row style="width:165px;margin: 0 auto;">
+          <ion-segment [(ngModel)]="option">
+            <ion-segment-button value="add">
+              新增
+            </ion-segment-button>
+            <ion-segment-button value="update">
+              修改
+            </ion-segment-button>
+            <ion-segment-button value="delete">
+              删除
+            </ion-segment-button>
+          </ion-segment>
+        </ion-row>
+        <ion-row class="padding_bottom_5">
+          <div text-center class="padding_top_8" [ngSwitch]="option" style="width: 100%">
+            <div *ngSwitchCase="'add'">
+              <ion-row *ngIf="diseases.add_j_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">甲类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.add_j_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.add_y_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">乙类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.add_y_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.add_b_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">丙类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.add_b_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.add_d_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">丁类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.add_d_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+            </div>
+            <div *ngSwitchCase="'update'">
+              <ion-row *ngIf="diseases.update_j_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">甲类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.update_j_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.update_y_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">乙类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.update_y_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.update_b_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">丙类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.update_b_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.update_d_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">丁类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.update_d_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+            </div>
+            <div *ngSwitchCase="'delete'">
+              <ion-row *ngIf="diseases.delete_j_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">甲类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.delete_j_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.delete_y_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">乙类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.delete_y_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.delete_b_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">丙类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.delete_b_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="diseases.delete_d_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">丁类特殊疾病</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of diseases.delete_d_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-6>{{i.tsjbmc}}</ion-col>
+                  <ion-col col-3>{{i.tsjbbm}}</ion-col>
+                  <ion-col col-3>{{i.fwtz}}</ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </div>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</div>

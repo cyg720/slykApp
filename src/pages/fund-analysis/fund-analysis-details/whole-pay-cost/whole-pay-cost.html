@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h6>统筹支付费用</h6></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid [ngStyle]="{'display':display}">
+    <ion-row>
+      <ion-card style="width: 100%;" class="bj_fff">
+        <ion-card-content style="padding: 5px 0px" text-center>
+          <ion-row >
+            <ion-col>
+              <h2>
+                <span>统筹支付费用</span>
+                <span class="warningBiaozhu">-11%</span>
+              </h2>
+              <h1>
+                <span>12345</span>
+                <span class="spanFontSize" style="margin-left:0px;">万</span>
+              </h1>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row>
+            <ion-col col-6>
+              <h4>
+                去年同期：<span style="color: #00AAEF">12345</span>
+                <span class="spanFontSize" style="margin-left:1px;color: #00AAEF">万</span></h4>
+            </ion-col>
+            <ion-col col-6>
+              <h4>
+                去年全年：<span style="color: #00AAEF">12345</span>
+                <span class="spanFontSize" style="margin-left:1px;color: #00AAEF">万</span>
+              </h4>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card style="width: 100%;" class="bj_fff">
+        <ion-card-content>
+          <ion-row text-center style="height: 25px;" class="margin_top_5">
+            <ion-col col-6 text-left>
+              <h2 class="padding_left_15">月度医疗总费用</h2>
+            </ion-col>
+            <ion-col col-3 >
+              <div class="divBorderRadius" [(ngStyle)]="colors[0]"></div>
+              <span style="font-size: 0.5em;">本年值</span>
+            </ion-col>
+            <ion-col col-3 >
+              <div class="divBorderRadius" [(ngStyle)]="colors[1]"></div>
+              <span style="font-size: 0.5em;">上年值</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <div #ageAnalysis style="height: 200px;width:100%;"></div>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h6>{{title}}</h6></ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="favorite()">
+        <ion-icon [name]="shoucang" class="headerIcon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid [ngStyle]="{'display':display}" style="padding: 5px">
+    <ion-row class="margin_top_5 margin_left_5 margin_right_5">
+      <ion-searchbar class="no_padding_margin"
+                     (ionInput)="getItems($event)"
+                     (ionClear)="onClear()"
+                     animated="true" autocomplete="on" placeholder="搜索医院"></ion-searchbar>
+    </ion-row>
+    <ion-row *ngIf="totalControl">
+      <ion-card class="bj_fff" style="width: 100%;">
+        <ion-card-content style="padding: 5px 0px" text-center>
+          <ion-row >
+            <ion-col>
+              <h2>
+                <span>{{totalControl.name}}</span>
+              </h2>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row>
+            <ion-col col-6>
+              <h6>
+                总预算：<span style="color: #00AAEF">{{totalControl.ysje}}</span>
+                <span class="spanFontSize" style="margin-left:1px;color: #00AAEF">万</span>
+              </h6>
+            </ion-col>
+            <ion-col col-6>
+              <h6>
+                累计结算：<span style="color: #00AAEF">{{totalControl.ljjsje}}</span>
+                <span class="spanFontSize" style="margin-left:1px;color: #00AAEF">万</span>
+              </h6>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <!-------------------------------->
+    <ion-row *ngFor="let i of totalHospitalList">
+      <ion-card class="bj_fff" style="width: 100%">
+        <ion-card-content tappable (click)="toHospitalDetails(i)">
+          <ion-row padding-left class="margin_top_5">
+            <h2>{{i.name}}</h2>
+          </ion-row>
+          <ion-row padding-left class="margin_top_bottom_5">
+            <ion-col col-3 text-center>
+              <p class="divBorderRadius_x" style="color: #eeeeee">本年指标</p>
+            </ion-col>
+            <ion-col col-3 text-left>
+              <p>{{i.bnzb}}万</p>
+            </ion-col>
+            <ion-col col-3 text-center>
+              <p class="divBorderRadius_x" style="color: #eeeeee">年中调整</p>
+            </ion-col>
+            <ion-col col-3 text-left>
+              <p>{{i.nztz}}万</p>
+            </ion-col>
+          </ion-row>
+          <ion-row padding-left class="margin_top_bottom_5">
+            <ion-col col-3 text-center>
+              <p class="divBorderRadius_x" style="color: #eeeeee">上年结余</p>
+            </ion-col>
+            <ion-col col-3 text-left>
+              <p>{{i.snjy}}万</p>
+            </ion-col>
+            <ion-col col-3 text-center>
+              <p class="divBorderRadius_x" style="color: #eeeeee">本年结余</p>
+            </ion-col>
+            <ion-col col-3 text-left>
+              <p>{{i.bnjy}}万</p>
+            </ion-col>
+          </ion-row>
+          <ion-row padding-left class="margin_top_bottom_5">
+            <ion-col col-3 text-center>
+              <p class="divBorderRadius_x" style="color: #eeeeee">本年已结算</p>
+            </ion-col>
+            <ion-col col-3 text-left>
+              <p>{{i.bnyjs}}万</p>
+            </ion-col>
+          </ion-row>
+          <div class="border-top color_1" text-center>
+            查看详情
+            <ion-icon style="font-size: 0.8em;" name="ios-arrow-dropright-outline" ></ion-icon>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

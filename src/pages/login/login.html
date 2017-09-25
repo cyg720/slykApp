@@ -1,0 +1,21 @@
+<ion-content padding>
+  <ion-list style="margin-top: 20px;">
+    <ion-item text-center no-lines>
+      <ion-img padding-bottom src="assets/slyk_min.png" style="width: 84px;height: 84px;background: #fff;"></ion-img>
+      <h1 padding>易康监管决策系统</h1>
+    </ion-item>
+    <ion-item>
+      <ion-label padding-left>
+        <ion-icon name="ios-contact-outline" class="iconSize"></ion-icon>
+      </ion-label>
+      <ion-input type="text" placeholder="账户" [(ngModel)]="user.userName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label padding-left>
+        <ion-icon name="ios-lock-outline" class="iconSize"></ion-icon>
+      </ion-label>
+      <ion-input type="password" placeholder="密码" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button style="margin-top: 50px;" ion-button block (click)="longin()" [disabled]="isDisabled">{{str}}</button>
+</ion-content>

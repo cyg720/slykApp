@@ -1,0 +1,535 @@
+/**全局样式文件*/
+
+$itemBorderColor:#dedede;
+
+//标注 负数 背景色
+$warningBiaozhu:#FC6565;
+//标注 整数 背景色
+$normalBiaozhu:#00AAEF;
+
+$color_1:#BBBBBB;
+$color_2:#101010;
+$color_3:#00AAEF;
+$color_4:#696969;
+$color_5:#FC6565;
+$color_6: #488aff;//字体图标颜色
+$color_7:#ffffff;
+$header_icon_color:#ffffff;
+$header_title_color:#ffffff;
+.color_1{
+  color:$color_1;
+}
+.color_2{
+  color:$color_2;
+}
+.color_3{
+  color:$color_3;
+}
+.color_4{
+  color:$color_4;
+}
+.color_5{
+  color:$color_5;
+}
+.color_6{
+  color:$color_6;
+}
+.bj_fff{
+  background:$color_7;
+}
+.fontSize14{
+  font-size:1.4rem;
+}
+//***********************重写系统样式***************************
+.picker-ios .picker-toolbar-button{
+  text-align: center;
+}
+.picker-ios .picker-opt{
+  height: 40px;
+  line-height: 40px;
+  font-size:15px;
+}
+.picker-ios .picker-toolbar{
+  border: none;
+}
+.picker-ios .picker-wrapper {
+  height: 220px;
+  width: 90%;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  border-top: 1px solid #c8c7cc;
+  background: #F0F0F2;
+}
+.searchbar{
+  background: none;
+  border:none;
+  padding: 0px;
+}
+.card{
+  border-radius: 3px;
+}
+.list{
+  margin: 0px;
+}
+
+.infinite-loading{
+  margin: 0px;
+}
+.loading-ios .loading-wrapper{
+  height: 100px;
+}
+.segment .segment-button{
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: 0 auto;
+}
+.content hr{
+  height: 1px;
+}
+.col{
+  padding: 0px;
+  margin: 0px;
+}
+.row{
+  padding: 0px;
+  margin: 0px;
+}
+//卡片 margin 0px
+.card{
+  margin: 5px 0px;
+}
+.card-content{
+  padding: 0px;
+  margin: 0px;
+}
+//返回按钮 颜色
+.bar-button-default{
+  color: $header_icon_color;
+}
+//去掉header 边框
+.header .toolbar:last-child .toolbar-background{
+  border-width:0px;
+}
+//header 背景色
+.toolbar-background{
+  background:$color_6;
+}
+//header 字体颜色
+.toolbar-title{
+  color: $header_title_color;
+}
+.list .item-block .item-inner{
+  border: none;
+}
+.list > .item-block:first-child{
+  border-top: none;
+}
+.item{
+  border-bottom: 0.55px solid #c8c7cc;
+}
+//****************************************************
+
+
+//标签元素需要显示top 的border 使用
+.border-top{
+  border-top:1px $itemBorderColor solid;
+}
+//item lable 字体统一颜色
+.fontColor{
+  color: $color_6;
+}
+
+//字体图标同一大小 颜色
+.iconSize{
+  font-size: 30px;
+  color: $color_6;
+}
+.headerIcon{
+  font-size: 30px;
+  color: $header_icon_color;
+}
+
+//去掉padding 和 margin
+.no_padding_margin{
+  padding: 0px;
+  margin: 0px;
+}
+
+//自定义 的 padding margin
+.padding_10{
+  padding: 10px;
+}
+.padding_5{
+  padding: 5px;
+}
+.padding_top_3{
+  padding-top: 3px;
+}
+.padding_top_5{
+  padding-top: 5px;
+}
+.padding_top_7{
+  padding-top: 7px;
+}
+.padding_top_8{
+  padding-top: 8px;
+}
+.padding_bottom_5{
+  padding-bottom: 5px;
+}
+.margin_bottom_5{
+  margin-bottom: 5px;
+}
+.margin_bottom_8{
+  margin-bottom: 8px;
+}
+.margin_top_5{
+  margin-top: 5px;
+}
+.margin_left_5{
+  margin-left: 5px;
+}
+.margin_right_5{
+  margin-right: 5px;
+}
+.margin_top_10{
+  margin-top: 10px;
+}
+.margin_top_bottom_5{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.padding_left_15{
+  padding-left: 15px;
+}
+.padding_right_15{
+  padding-left: 15px;
+}
+.padding_left_20{
+  padding-left: 20px;
+}
+.padding_right_20{
+  padding-left: 20px;
+}
+.padding_left_50{
+  padding-left: 50px;
+}
+
+//重写 H 标签的 一个小bug
+[padding] h1:first-child, [padding] h2:first-child, [padding] h3:first-child,
+[padding] h4:first-child, [padding] h5:first-child, [padding] h6:first-child{
+  margin-top: auto;
+}
+
+//通用  样式 单位 缩小版 万 元 。。。等等
+.spanFontSize{
+  font-size: 0.1rem;
+  color: $color_6;
+}
+.divBorderRadius{
+  border-radius: 4px;
+  display: inline-table;
+  width: 8px;
+  height: 8px;
+}
+
+.warningBiaozhu{
+  background: $warningBiaozhu;
+  border-radius: 1.5em;
+  padding: 0px 5px 0px 5px;
+  font-size: 0.5rem;
+  margin-left: 5px;
+}
+
+/*****************慎重修改******  c3 chart css **********************/
+/*-- Chart --*/
+.c3 svg {
+  font: 10px sans-serif;
+  -webkit-tap-highlight-color: transparent; }
+
+.c3 path, .c3 line {
+  fill: none;
+  stroke: #000; }
+
+.c3 text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+.c3-legend-item-tile,
+.c3-xgrid-focus,
+.c3-ygrid,
+.c3-event-rect,
+.c3-bars path {
+  shape-rendering: crispEdges; }
+
+.c3-chart-arc path {
+  stroke: #fff; }
+
+.c3-chart-arc text {
+  fill: #fff;
+  font-size: 13px; }
+
+/*-- Axis --*/
+/*-- Grid --*/
+.c3-grid line {
+  stroke: #aaa; }
+
+.c3-grid text {
+  fill: #aaa; }
+
+.c3-xgrid, .c3-ygrid {
+  stroke-dasharray: 3 3; }
+
+/*-- Text on Chart --*/
+.c3-text.c3-empty {
+  fill: #808080;
+  font-size: 2em; }
+
+/*-- Line --*/
+.c3-line {
+  stroke-width: 1px; }
+
+/*-- Point --*/
+.c3-circle._expanded_ {
+  stroke-width: 1px;
+  stroke: white; }
+
+.c3-selected-circle {
+  fill: white;
+  stroke-width: 2px; }
+
+/*-- Bar --*/
+.c3-bar {
+  stroke-width: 0; }
+
+.c3-bar._expanded_ {
+  fill-opacity: 0.75; }
+
+/*-- Focus --*/
+.c3-target.c3-focused {
+  opacity: 1; }
+
+.c3-target.c3-focused path.c3-line, .c3-target.c3-focused path.c3-step {
+  stroke-width: 2px; }
+
+.c3-target.c3-defocused {
+  opacity: 0.3 !important; }
+
+/*-- Region --*/
+.c3-region {
+  fill: steelblue;
+  fill-opacity: .1; }
+
+/*-- Brush --*/
+.c3-brush .extent {
+  fill-opacity: .1; }
+
+/*-- Select - Drag --*/
+/*-- Legend --*/
+.c3-legend-item {
+  font-size: 12px; }
+
+.c3-legend-item-hidden {
+  opacity: 0.15; }
+
+.c3-legend-background {
+  opacity: 0.75;
+  fill: white;
+  stroke: lightgray;
+  stroke-width: 1; }
+
+/*-- Title --*/
+.c3-title {
+  font: 14px sans-serif; }
+
+/*-- Tooltip --*/
+.c3-tooltip-container {
+  z-index: 10; }
+
+.c3-tooltip {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #fff;
+  empty-cells: show;
+  -webkit-box-shadow: 7px 7px 12px -9px #777777;
+  -moz-box-shadow: 7px 7px 12px -9px #777777;
+  box-shadow: 7px 7px 12px -9px #777777;
+  opacity: 0.9; }
+
+.c3-tooltip tr {
+  border: 1px solid #CCC; }
+
+.c3-tooltip th {
+  background-color: #aaa;
+  font-size: 14px;
+  padding: 2px 5px;
+  text-align: left;
+  color: #FFF; }
+
+.c3-tooltip td {
+  font-size: 13px;
+  padding: 3px 6px;
+  background-color: #fff;
+  border-left: 1px dotted #999; }
+
+.c3-tooltip td > span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px; }
+
+.c3-tooltip td.value {
+  text-align: right; }
+
+/*-- Area --*/
+.c3-area {
+  stroke-width: 0;
+  opacity: 0.2; }
+
+/*-- Arc --*/
+.c3-chart-arcs-title {
+  dominant-baseline: central;
+  font-size: 1.3em; }
+
+.c3-chart-arcs .c3-chart-arcs-background {
+  fill: #e0e0e0;
+  stroke: none; }
+
+.c3-chart-arcs .c3-chart-arcs-gauge-unit {
+  fill: #000;
+  font-size: 16px; }
+
+.c3-chart-arcs .c3-chart-arcs-gauge-max {
+  fill: #777; }
+
+.c3-chart-arcs .c3-chart-arcs-gauge-min {
+  fill: #777; }
+
+.c3-chart-arc .c3-gauge-value {
+  fill: #000;
+  /*  font-size: 28px !important;*/ }
+//************************************** c3 css 结束***********************************************
+
+//******************************** loading_ 开始 ******************************************
+#_loading_{
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  z-index: 9999;
+  opacity: 0.5;
+  text-align: center;
+  position:absolute;
+  display:none;
+}
+._spinner_ {
+  margin: 150px auto;
+  width: 35px;
+  height: 35px;
+  position: relative;
+}
+
+.container1 > div, .container2 > div, .container3 > div {
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+._spinner_ .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+
+.container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.container3 .circle1 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+.container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+
+.container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+
+.container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+
+.container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+.container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+
+.container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+.container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+
+@-webkit-keyframes bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0.0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+}
+//************************************* loading 结束*****************************************

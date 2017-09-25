@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h5>个人中心</h5></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="bj_fff" style="width: 100%;">
+    <ion-card-content>
+      <ion-list>
+        <ion-item tappable (click)="navCtrl.push('CollectionPage')">
+          <label item-left class="labelHeight">
+            <ion-icon name="ios-star-outline" class="iconSize"></ion-icon>
+          </label>
+          <span>我的收藏</span>
+          <span item-right>
+        <ion-icon name="ios-arrow-dropright-outline" class="color_1"></ion-icon>
+      </span>
+        </ion-item>
+        <ion-item tappable (click)="navCtrl.push('AboutPage')">
+          <label item-left class="labelHeight">
+            <ion-icon name="ios-contacts-outline" class="iconSize"></ion-icon>
+          </label>
+          <span>关于我们</span>
+          <span item-right>
+        <ion-icon name="ios-arrow-dropright-outline" class="color_1"></ion-icon>
+      </span>
+        </ion-item>
+        <ion-item tappable (click)="onCall()">
+          <label item-left class="labelHeight">
+            <ion-icon name="ios-people-outline" class="iconSize"></ion-icon>
+          </label>
+          <span>联系我们</span>
+          <span item-right class="color_1">028-888888</span>
+        </ion-item>
+        <ion-item tappable (click)="onUpdateApp()">
+          <label item-left class="labelHeight">
+            <ion-icon name="ios-cloud-upload-outline" class="iconSize"></ion-icon>
+          </label>
+          <span>
+        更新版本
+        <i [ngClass]="['iconfont',dian]" style="font-size:40px;color:red;top:-5px;position:absolute;"></i>
+      </span>
+          <span item-right class="color_1">v{{version}}</span>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <button block ion-button (click)="logout()"
+          style="margin-top: 50px;">退出当前账号</button>
+</ion-content>

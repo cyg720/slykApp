@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h6>新增医院分析</h6></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="bj_fff" style="width:100%; ">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <label item-left >年度</label>
+          <ion-datetime cancelText="取消" doneText="确定"
+                        displayFormat="YYYY"
+                        [(ngModel)]="myYear" style="padding-left: 0px;" ></ion-datetime>
+          <span item-right class="color_1">
+        <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+      </span>
+        </ion-item>
+        <ion-item (click)="toHospital()">
+          <label item-left>医院</label>
+          <span> {{hpspitalName}}</span>
+          <span item-right class="color_1">
+        <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+    </span>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <button style="margin-top: 50px" ion-button block
+          (click)="addHospitalAnalysls()" [disabled]="addDisabled">确定新增</button>
+</ion-content>

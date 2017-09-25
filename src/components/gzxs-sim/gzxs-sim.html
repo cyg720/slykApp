@@ -1,0 +1,425 @@
+<div>
+  <ion-grid>
+    <!--乙类报销比例-->
+    <ion-row *ngIf="gzxs.ylbxbl_show">
+      <ion-card style="width:100%;" class="bj_fff padding_bottom_5">
+        <ion-card-content>
+         <ion-row class="padding_bottom_5">
+           <h5 style="margin:0 auto; margin-top: 5px">乙类报销比例</h5>
+         </ion-row>
+          <ion-row *ngIf="gzxs.ylbxbl_zg != null">
+            <ion-col col-4>
+              <p class="divBorderRadius_gzxs">职工</p>
+            </ion-col>
+            <ion-col col-4>
+              <p>调整前：<span class="color_3">{{gzxs.ylbxbl_zg.qian}}</span></p>
+            </ion-col>
+            <ion-col col-4>
+              <p>调整后：<span class="color_3">{{gzxs.ylbxbl_zg.hou}}</span></p>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="gzxs.ylbxbl_jm != null">
+            <ion-col col-4>
+              <p class="divBorderRadius_gzxs">居民</p>
+            </ion-col>
+            <ion-col col-4>
+              <p>调整前：<span class="color_3">{{gzxs.ylbxbl_jm.qian}}</span></p>
+            </ion-col>
+            <ion-col col-4>
+              <p>调整后：<span class="color_3">{{gzxs.ylbxbl_jm.hou}}</span></p>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <!--住院支付基本比例-->
+    <ion-row *ngIf="gzxs.zyzf_zg_show || gzxs.zyzf_jm_show">
+      <ion-card style="width:100%" class="bj_fff padding_bottom_5">
+        <ion-card-content>
+          <ion-row class="padding_bottom_5">
+            <h5 style="margin:0 auto; margin-top: 5px">住院支付基本比例</h5>
+          </ion-row>
+          <div *ngIf="gzxs.zyzf_zg_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">职工</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.zyzf_zg_ddzz !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>当地在职</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_zg_ddzz.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_zg_ddzz.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_zg_ddtx !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>当地退休</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_zg_ddtx.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_zg_ddtx.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_zg_zwdzz !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>转外地在职</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_zg_zwdzz.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_zg_zwdzz.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_zg_zwdtx !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>转外地退休</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_zg_zwdtx.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_zg_zwdtx.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_zg_90ys !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>90岁以上</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_zg_90ys.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_zg_90ys.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+          <div *ngIf="gzxs.zyzf_jm_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">居民</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.zyzf_jm_sqfwjg !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>社区服务机构</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_jm_sqfwjg.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_jm_sqfwjg.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_jm_yjyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>一级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_jm_yjyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_jm_yjyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_jm_ejyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>二级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_jm_ejyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_jm_ejyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_jm_sjyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>三级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_jm_sjyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_jm_sjyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.zyzf_jm_zgzfbl !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>最高支付比例</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.zyzf_jm_zgzfbl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.zyzf_jm_zgzfbl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <!--门特报销比例-->
+    <ion-row *ngIf="gzxs.mtbx_zg_show || gzxs.mtbx_jm_show">
+      <ion-card style="width:100%" class="bj_fff padding_bottom_5">
+        <ion-card-content>
+          <ion-row class="padding_bottom_5">
+            <h5 style="margin:0 auto; margin-top: 5px">门特报销比例</h5>
+          </ion-row>
+          <div *ngIf="gzxs.mtbx_zg_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">职工</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.mtbx_zg_yl !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>乙类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.mtbx_zg_yl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.mtbx_zg_yl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+           <div *ngIf="gzxs.mtbx_zg_bl !== null">
+             <ion-row class="padding_bottom_5" text-center>
+               <ion-col col-4>丙类门特</ion-col>
+               <ion-col col-4>调整前：<span class="color_3">{{gzxs.mtbx_zg_bl.qian}}</span></ion-col>
+               <ion-col col-4>调整后：<span class="color_3">{{gzxs.mtbx_zg_bl.hou}}</span></ion-col>
+             </ion-row>
+           </div>
+            <div *ngIf="gzxs.mtbx_zg_dl !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>丁类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.mtbx_zg_dl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.mtbx_zg_dl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+          <div *ngIf="gzxs.mtbx_jm_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">居民</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.mtbx_jm_yl !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>乙类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.mtbx_jm_yl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.mtbx_jm_yl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.mtbx_jm_bl !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>丙类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.mtbx_jm_bl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.mtbx_jm_bl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.mtbx_jm_dl !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>丁类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.mtbx_jm_dl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.mtbx_jm_dl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <!--封顶线-->
+    <ion-row *ngIf="gzxs.fdx_zg_show || gzxs.fdx_jm_show">
+      <ion-card style="width:100%" class="bj_fff padding_bottom_5">
+        <ion-card-content>
+          <ion-row class="padding_bottom_5">
+            <h5 style="margin:0 auto; margin-top: 5px">封顶线</h5>
+          </ion-row>
+          <div *ngIf="gzxs.fdx_zg_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">职工</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.fdx_zg_ndfdx !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>年度封顶线</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_zg_ndfdx.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_zg_ndfdx.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_zg_ylmt !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>乙类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_zg_ylmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_zg_ylmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_zg_blmt !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>丙类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_zg_blmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_zg_blmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_zg_dlmt !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>丁类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_zg_dlmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_zg_dlmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_zg_tsdgbl !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>同时患有多个丙类疾病</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_zg_tsdgbl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_zg_tsdgbl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+          <div *ngIf="gzxs.fdx_jm_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">居民</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.fdx_jm_ndfdx">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>年度封顶线</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_jm_ndfdx.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_jm_ndfdx.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_jm_ylmt">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>乙类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_jm_ylmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_jm_ylmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_jm_blmt">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>丙类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_jm_blmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_jm_blmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_jm_dlmt">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>丁类门特</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_jm_dlmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_jm_dlmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.fdx_jm_tsdgbl">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>同时患有多个丙类疾病</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.fdx_jm_tsdgbl.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.fdx_jm_tsdgbl.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <!--起伏线-->
+    <ion-row *ngIf="gzxs.qfx_zg_show || gzxs.qfx_jm_show">
+      <ion-card style="width:100%" class="bj_fff padding_bottom_5">
+        <ion-card-content>
+          <ion-row class="padding_bottom_5">
+            <h5 style="margin:0 auto; margin-top: 5px">起伏线</h5>
+          </ion-row>
+          <div *ngIf="gzxs.qfx_zg_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">职工</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.qfx_zg_yjyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>一级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_zg_yjyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_zg_yjyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_zg_ejyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>二级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_zg_ejyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_zg_ejyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_zg_sjyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>三级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_zg_sjyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_zg_sjyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_zg_zswyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>转市外医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_zg_zswyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_zg_zswyy.hou}}</span></ion-col>              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_zg_jlmt !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>门特甲类</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_zg_jlmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_zg_jlmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_zg_dlmt !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>门特丁类</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_zg_dlmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_zg_dlmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_zg_zdqfx !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>最低起伏线</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_zg_zdqfx.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_zg_zdqfx.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+          <div *ngIf="gzxs.qfx_jm_show">
+            <ion-row>
+              <ion-col col-4>
+                <p class="divBorderRadius_gzxs">居民</p>
+              </ion-col>
+            </ion-row>
+            <div *ngIf="gzxs.qfx_jm_sqfwjg !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>社区服务机构</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_sqfwjg.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_sqfwjg.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_jm_yjyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>一级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_yjyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_yjyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_jm_ejyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>二级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_ejyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_ejyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_jm_sjyy !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>三级医院</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_sjyy.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_sjyy.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+           <div *ngIf="gzxs.qfx_jm_zswyy !== null">
+             <ion-row class="padding_bottom_5" text-center>
+               <ion-col col-4>转市外医院</ion-col>
+               <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_zswyy.qian}}</span></ion-col>
+               <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_zswyy.hou}}</span></ion-col>
+             </ion-row>
+           </div>
+            <div *ngIf="gzxs.qfx_jm_jlmt !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>门特甲类</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_jlmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_jlmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_jm_dlmt !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>门特丁类</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_dlmt.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_dlmt.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_jm_zdqfx !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>最低起伏线</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_zdqfx.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_zdqfx.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+            <div *ngIf="gzxs.qfx_jm_sqfwjgzd !== null">
+              <ion-row class="padding_bottom_5" text-center>
+                <ion-col col-4>社区服务机构最低起付线</ion-col>
+                <ion-col col-4>调整前：<span class="color_3">{{gzxs.qfx_jm_sqfwjgzd.qian}}</span></ion-col>
+                <ion-col col-4>调整后：<span class="color_3">{{gzxs.qfx_jm_sqfwjgzd.hou}}</span></ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</div>

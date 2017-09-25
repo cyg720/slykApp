@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <h5>易康监管决策系统</h5>
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button (click)="navCtrl.push('PersonalCenterPage')">
+        <ion-icon class="headerIcon" name="ios-contact-outline"></ion-icon>
+        <i [ngClass]="['iconfont', dian]" style="font-size:40px;color:red;top:-30px;right:-15px;position:absolute;"></i>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding #home class="bj_fff">
+  <ion-grid [ngStyle]="{'display':display}">
+    <ion-row>
+      <ion-col col-4 *ngFor="let m of menus" text-center>
+        <div>
+          <ion-fab style="position: inherit;display: inline-block;">
+            <button ion-fab (click)="toPage(m)" style="width: 70px;height: 70px;">
+              <i [ngClass]="['iconfont', m.icon]" style="font-size: 38px;"></i>
+            </button>
+          </ion-fab>
+          <p>{{m.name}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

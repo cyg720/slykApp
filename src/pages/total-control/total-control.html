@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h6>总额控制</h6></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [ngStyle]="{'display':display}">
+    <ion-item tappable (click)="toTotalControlDetails(i)"
+              class="itemBorBom  bj_fff margin_top_10" *ngFor="let i of totalControlList" >
+      <ion-avatar item-start>
+        <ion-fab style="position: inherit;display: inline-block;">
+          <button ion-fab>
+            <i [ngClass]="['iconfont',icon]" style="font-size: 30px;"></i>
+          </button>
+        </ion-fab>
+      </ion-avatar>
+      <h5>{{i.name}}</h5>
+      <p>预算金额：{{i.ysje}}</p>
+      <p>累计结算金额：<span>{{i.ljjsje}}</span></p>
+      <span item-right class="color_1">
+          <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+        </span>
+    </ion-item>
+  </ion-list>
+</ion-content>

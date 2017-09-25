@@ -1,0 +1,175 @@
+<div>
+  <ion-grid>
+    <ion-card style="width: 100%;" class="bj_fff">
+      <ion-card-content>
+        <ion-row style="width:165px;margin: 0 auto;">
+          <ion-segment [(ngModel)]="option">
+            <ion-segment-button value="add">
+              新增
+            </ion-segment-button>
+            <ion-segment-button value="update">
+              修改
+            </ion-segment-button>
+            <ion-segment-button value="delete">
+              删除
+            </ion-segment-button>
+          </ion-segment>
+        </ion-row>
+        <ion-row class="padding_bottom_5">
+          <div text-center class="padding_top_8" [ngSwitch]="option" style="width: 100%">
+            <div *ngSwitchCase="'add'">
+              <ion-row *ngIf="cbjgs.add_yj_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">一级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.add_yj_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.add_ej_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">二级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.add_ej_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.add_sj_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">三级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.add_sj_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.add_sq_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">社区医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.add_sq_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+            </div>
+            <div *ngSwitchCase="'update'">
+              <ion-row *ngIf="cbjgs.update_yj_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">一级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.update_yj_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.update_ej_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">二级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.update_ej_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.update_sj_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">三级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.update_sj_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.update_sq_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">社区医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.update_sq_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+            </div>
+            <div *ngSwitchCase="'delete'">
+              <ion-row *ngIf="cbjgs.delete_yj_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">一级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.delete_yj_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.delete_ej_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">二级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.delete_ej_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.delete_sj_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">三级医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.delete_sj_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+              <ion-row *ngIf="cbjgs.delete_sq_show">
+                <ion-col col-5>
+                  <p class="divBorderRadius_yp">社区医疗机构</p>
+                </ion-col>
+              </ion-row>
+              <div *ngFor="let i of cbjgs.delete_sq_data">
+                <hr>
+                <ion-row>
+                  <ion-col col-7>{{i.cbjgmc}}</ion-col>
+                  <ion-col col-5>{{i.cbjgbm}}</ion-col>
+                </ion-row>
+              </div>
+            </div>
+          </div>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</div>

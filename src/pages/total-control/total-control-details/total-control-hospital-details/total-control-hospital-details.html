@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h6>{{hospitalName}}</h6></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid [ngStyle]="{'display':display}">
+    <ion-row>
+      <div style="width: 100%;height: 300px;" #meter> </div>
+    </ion-row>
+    <ion-row >
+      <ion-card class="bj_fff" style="width: 100%">
+        <ion-card-content>
+          <ion-row padding-left class="margin_top_5">
+            <h2>指标概览</h2>
+          </ion-row>
+          <ion-row padding-left class="margin_top_bottom_5">
+            <ion-col col-6 text-center>
+              <div>本年指标:{{totalhospital.bnzb}}万</div>
+            </ion-col>
+            <ion-col col-6 text-center>
+              <div>上年结余:{{totalhospital.snjy}}万</div>
+            </ion-col>
+          </ion-row>
+          <hr/>
+          <ion-row padding-left class="margin_top_bottom_5">
+            <ion-col col-6 text-center>
+              <div>年中调整:{{totalhospital.nztz}}万</div>
+            </ion-col>
+            <ion-col col-6 text-center>
+              <div>月累计结算:{{totalhospital.yljjs}}万</div>
+            </ion-col>
+          </ion-row>
+          <hr/>
+          <ion-row padding-left class="margin_top_bottom_5">
+            <ion-col col-6 text-center>
+              <div>本年结余:{{totalhospital.bnjy}}万</div>
+            </ion-col>
+            <ion-col col-6 text-center>
+              <div>年中清算:{{totalhospital.nzqs}}万</div>
+            </ion-col>
+          </ion-row>
+          <hr/>
+          <ion-row padding-left class="margin_top_bottom_5">
+            <ion-col col-6 text-center>
+              <div>本年考核得分:{{totalhospital.bnkhdf}}万</div>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <!---------------->
+    <ion-row>
+      <ion-card class="bj_fff" style="width: 100%">
+        <ion-card-content>
+          <ion-row padding-left class="margin_top_5">
+            <h2>总额控制参数</h2>
+          </ion-row>
+          <ion-row text-center class="margin_top_bottom_5">
+            <ion-col><div>人数增长比:{{totalParams.rszzb}}</div></ion-col>
+            <ion-col><div>均次费用变化比:{{totalParams.jcfybhb}}</div></ion-col>
+          </ion-row><hr>
+          <ion-row text-center class="margin_top_bottom_5">
+            <ion-col><div>重复入院比例:{{totalParams.cfrybl}}</div></ion-col>
+            <ion-col><div>上年考核得分:{{totalParams.snkhdf}}</div></ion-col>
+          </ion-row><hr>
+          <ion-row text-center class="margin_top_bottom_5">
+            <ion-col col-6><div>{{totalParams.jsnjs1.nian}}结算:{{totalParams.jsnjs1.value}}万</div></ion-col>
+            <ion-col col-6><div>{{totalParams.jsnjs2.nian}}结算:{{totalParams.jsnjs2.value}}万</div></ion-col>
+          </ion-row><hr>
+          <ion-row text-center class="margin_top_bottom_5">
+            <ion-col col-6><div>{{totalParams.jsnjs3.nian}}结算:{{totalParams.jsnjs3.value}}万</div></ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    <!---------->
+    <ion-row>
+      <ion-card class="bj_fff" style="width: 100%;" >
+        <ion-card-content>
+          <ion-row style="height: 25px;" class="margin_top_5">
+            <h2 class="padding_left_15">月结算详情</h2>
+          </ion-row>
+          <ion-row class="fontSize_1rem">
+            <ion-col col-3></ion-col>
+            <ion-col col-3>申报金额</ion-col>
+            <ion-col col-3>暂扣款</ion-col>
+            <ion-col col-3>结算金额</ion-col>
+          </ion-row>
+          <div *ngFor="let i of totalMonthDetails">
+            <hr>
+            <ion-row class="margin_top_bottom_5 fontSize_1rem">
+              <ion-col col-3 text-center><span class="divBorderRadius_t">{{i.month}}</span></ion-col>
+              <ion-col col-3 class="color_3">{{i.sbje}}万</ion-col>
+              <ion-col col-3 class="color_3">{{i.zkk}}万</ion-col>
+              <ion-col col-3 class="color_3">{{i.jsje}}万</ion-col>
+            </ion-row>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

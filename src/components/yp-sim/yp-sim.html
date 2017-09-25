@@ -1,0 +1,74 @@
+<div>
+  <ion-grid>
+    <ion-card style="width:100%" class="bj_fff">
+      <ion-card-content>
+        <ion-row style="width:110px;margin: 0 auto;">
+          <ion-segment [(ngModel)]="option">
+            <ion-segment-button value="add">
+              新增
+            </ion-segment-button>
+            <ion-segment-button value="delete">
+              删除
+            </ion-segment-button>
+          </ion-segment>
+        </ion-row>
+        <ion-row class="padding_bottom_5">
+            <div text-center class="padding_top_8" [ngSwitch]="option" style="width: 100%">
+              <div *ngSwitchCase="'add'">
+                <ion-row *ngIf="drugs.add_j_show">
+                  <ion-col col-4>
+                    <p class="divBorderRadius_yp">甲类</p>
+                  </ion-col>
+                </ion-row>
+                <div *ngFor="let i of drugs.add_j_data">
+                  <hr>
+                  <ion-row>
+                    <ion-col col-7>{{i.ypmc}}</ion-col>
+                    <ion-col col-5>{{i.ypbm}}</ion-col>
+                  </ion-row>
+                </div>
+                <ion-row *ngIf="drugs.add_y_show">
+                  <ion-col col-4>
+                    <p class="divBorderRadius_yp">乙类</p>
+                  </ion-col>
+                </ion-row>
+                <div *ngFor="let i of drugs.add_y_data">
+                  <hr>
+                  <ion-row>
+                    <ion-col col-7>{{i.ypmc}}</ion-col>
+                    <ion-col col-5>{{i.ypbm}}</ion-col>
+                  </ion-row>
+                </div>
+              </div>
+              <div *ngSwitchCase="'delete'">
+                <ion-row *ngIf="drugs.delete_j_show">
+                  <ion-col col-4>
+                    <p class="divBorderRadius_yp">甲类</p>
+                  </ion-col>
+                </ion-row>
+                <div *ngFor="let i of drugs.delete_j_data">
+                  <hr>
+                  <ion-row>
+                    <ion-col col-7>{{i.ypmc}}</ion-col>
+                    <ion-col col-5>{{i.ypbm}}</ion-col>
+                  </ion-row>
+                </div>
+                <ion-row *ngIf="drugs.delete_y_show">
+                  <ion-col col-4>
+                    <p class="divBorderRadius_yp">乙类</p>
+                  </ion-col>
+                </ion-row>
+                <div *ngFor="let i of drugs.delete_y_data">
+                  <hr>
+                  <ion-row>
+                    <ion-col col-7>{{i.ypmc}}</ion-col>
+                    <ion-col col-5>{{i.ypbm}}</ion-col>
+                  </ion-row>
+                </div>
+              </div>
+            </div>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</div>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><h6>医院分析</h6></ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="navCtrl.push('AddHospitalAnalysisPage')">
+        <ion-icon name="ios-add-outline" class="headerIcon"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list [ngStyle]="{'display':display}">
+    <ion-item tappable (click)="toHospitalAnalysisDetails(i)"
+              class="itemBorBom  bj_fff margin_top_10" *ngFor="let i of hospAnalysisList" >
+      <ion-avatar item-start>
+        <ion-fab style="position: inherit;display: inline-block;">
+          <button ion-fab>
+            <i [ngClass]="['iconfont',icon]" style="font-size: 38px;"></i>
+          </button>
+        </ion-fab>
+      </ion-avatar>
+      <h5>{{i.name}}</h5>
+      <p *ngIf="i.state">生成时间：<span>{{i.date}}</span></p>
+      <p *ngIf="!i.state">{{i.stateStr}}</p>
+      <span item-right class="color_1">
+          <ion-icon name="ios-arrow-dropright-outline"></ion-icon>
+        </span>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll threshold="10%" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
