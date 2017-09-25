@@ -2,9 +2,9 @@
 # http://git-scm.com/docs/gitignore
 
 /*
-!/resources/*
-!/src/*
-!/plugins/*
+!resources/*
+!src/*
+!plugins/*
 !config.xml
 !.editorconfig
 !ionic.config.json
