@@ -1,0 +1,15 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+/*
+!/resources/*
+!/src/*
+!/plugins/*
+!config.xml
+!.editorconfig
+!ionic.config.json
+!package.json
+!README.md
+!tsconfig.json
+!tslint.json
+!.gitignore
