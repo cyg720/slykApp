@@ -1,5 +1,4 @@
-
-描述性文件
+数量易康 app 测试项目
 This is a starter template for [Ionic](http://ionicframework.com/docs/) diseases.
 
 ## How to use this template
